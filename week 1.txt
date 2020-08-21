@@ -1,0 +1,96 @@
+/*
+	Github link: https://github.com/Rahul-Raj-Singh/gitWorkflow
+*/
+
+#### Steps: ####
+
+1. Create local repo (named, gitWorkflow)
+-	git init
+
+2. Create readme.txt file and commit change
+-	touch readme.txt
+-	git add .
+-	git commit -m "readme.txt on master"
+
+3. Create given branches
+-	git branch dev
+-	git branch feature
+-	git branch qa
+-	git branch delivery
+
+4. Create remote repo and push all branches
+-	git remote add origin https://github.com/Rahul-Raj-Singh/gitWorkflow
+-	git push -u --all
+
+5. Create/Modify files on master and push
+-	mkdir info
+-	touch info/Java.txt
+-	git add .
+-	git commit -m "Java info"
+-	touch info/Python.txt
+-	git add .
+-	git commit -m "Python info"
+-	git push origin master
+
+6. Add file to feature branch and push
+-	touch Feature.txt
+-	git add .
+-	git commit -m "Feature.txt added"
+
+7. On Github create pull request to merge feature branch with dev branch
+
+8. Sync changes to dev branch
+-	git pull origin dev
+
+
+###### To demonstrate conflict and resolution ####
+
+9. Add info.txt (with text "When will the product launch?") on qa branch on github
+-	git pull origin qa
+
+10. Edit info.txt (Say, "By the end of this month.") on github
+
+11. Edit info.txt (Say, "By the end of next month.") on local repo
+-	git commit -am "Question answered"
+
+12. Attempt Pushing changes
+-	git pull origin qa	# Merge conflict
+
+13. Resolve by editing info.txt (Say, "By the end of this month.") and push
+-	git commit -m "Conflict Resolved"
+-	git push origin qa
+
+14. To sync all branches with remote
+-	git fetch --prune
+
+
+#### Ground Day to Day Scenario ####
+
+-	touch multiply.txt
+-	git add .
+- 	git commit -m "subract.txt added"
+-	git status
+-	git log --oneline
+-	git commit --amend -m "multiply.txt added"		# hash say, 11ed85f
+-	git reset --soft 12e84f 						# here, 12e84f denotes commit just before 11ed85f
+-	git commit -m "subtract.txt re-added"			# Changed files still remained in staging area, so committed back
+-	git reset --hard 12e84f							# Rollback to given commit deleting all previous files
+
+-	git reflog										# To create backup of reset files
+-	git checkout 45abc5								# 45abc5 represents deleted commit to be backed up
+-	git branch backup
+-	git checkout master
+
+# File is modified in wrong branch (say, dev instead of feature)
+
+-	git stash save "Oops Wrong Branch"				# Stash changes
+-	git checkout feature 							# Move to correct branch
+-	git stash apply stash@{0}						# Move stash here
+-	git stash clear
+
+# File is committed in wrong branch (say, dev instead of feature)
+
+-	git checkout feature 							# Move to correct branch
+-	git cherry-pick 5563aa							# 5563aa is commit to be copied
+-	git checkout dev
+-	git reset --hard head^							# Delete last commit from dev
