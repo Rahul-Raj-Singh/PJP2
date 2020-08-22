@@ -1,0 +1,12 @@
+Determine Day of Week: Wednesday
+Subtract Date: 12-10-2020
+Determine Week Number: 5
+
+Determine Day of Week: Wednesday
+Subtract Date: 12-10-2020
+Determine Week Number: 5
+
+Determine Day of Week: Wednesday
+Subtract Date: 12-10-2020
+Determine Week Number: 5
+
