@@ -1,0 +1,26 @@
+pipeline{
+    
+    agent any
+    
+    tools{
+        jdk 'JDK8'
+        maven 'MAVEN3.3'
+    }
+    
+    stages{
+        
+        stage('SCM pull'){
+            steps{
+                git branch: 'week-2',
+                url: 'https://github.com/Rahul-Raj-Singh/PJP2.git'
+            }
+        }
+        
+        stage('Build'){
+            steps{
+                sh 'mvn -f DateTimeCalculator/ clean package'
+            }
+        }
+        
+    }
+}
