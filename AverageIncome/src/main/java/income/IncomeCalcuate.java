@@ -47,7 +47,7 @@ public class IncomeCalcuate {
 
 				key = city + "," + gender;
 
-				// City seen before, so update total amount
+				// City seen before, so update total amount and add total count
 				if (map.containsKey(key)) {
 					pair = map.get(key);
 					pair.setFirstValue(pair.getFirstValue() + amount);
