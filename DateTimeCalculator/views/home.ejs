@@ -1,0 +1,46 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DateTime Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="calculate.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <fieldset>
+            <legend>DateTime Calculator</legend>
+            <form action="">
+              
+               <div class="option">
+                   <label for="first_date" >Enter Date</label>
+                    <input type="text" id="first_date" placeholder="dd/mm/yyyy">
+               </div>
+               
+               <div class="addDate style">
+                    <label for="second_add_date" >Enter to Add</label>
+                    <input type="text" id="second_add_date" placeholder="e.g, 3 days, 1 week, 2 months etc">
+                    <button>Calculate</button>
+                    <span class="close">X</span>
+               </div>
+               
+                <div class="subDate style">
+                    <label for="second_sub_date" >Enter to Subtract</label>
+                    <input type="text" id="second_sub_date" placeholder="e.g, 31/12/2005, 2 months, 3 days, 1 year">
+                    <button>Calculate</button>
+                    <span class="close">X</span>
+               </div>
+               
+               <div class="buttons">
+                   <button id="week_day">Week Day</button>
+                   <button id="week_no">Week No.</button>
+                   <button id="add">Add</button>
+                   <button id="sub">Subtract </button>
+               </div>
+                
+                
+                <textarea id="result" rows="5" cols="60" readonly></textarea>
+            </form>
+        </fieldset>
+    </div>
+</body>
+</html>
