@@ -1,0 +1,7 @@
+F:\Learnin C#\DateTimeCalculator\DateTimeCalculator\obj\Debug\DateTimeCalculator.csprojAssemblyReference.cache
+F:\Learnin C#\DateTimeCalculator\DateTimeCalculator\obj\Debug\DateTimeCalculator.csproj.CoreCompileInputs.cache
+F:\Learnin C#\DateTimeCalculator\DateTimeCalculator\bin\Debug\DateTimeCalculator.exe.config
+F:\Learnin C#\DateTimeCalculator\DateTimeCalculator\bin\Debug\DateTimeCalculator.exe
+F:\Learnin C#\DateTimeCalculator\DateTimeCalculator\bin\Debug\DateTimeCalculator.pdb
+F:\Learnin C#\DateTimeCalculator\DateTimeCalculator\obj\Debug\DateTimeCalculator.exe
+F:\Learnin C#\DateTimeCalculator\DateTimeCalculator\obj\Debug\DateTimeCalculator.pdb
