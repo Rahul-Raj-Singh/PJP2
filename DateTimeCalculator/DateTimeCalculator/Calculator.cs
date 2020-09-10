@@ -36,7 +36,7 @@ namespace DateTimeCalculator {
             else
                 weekNo = 5;
 
-            return $"Month Week No: {weekNo}\nYear Week No: {Date.DayOfYear / 7}";
+            return $"Month Week No: {weekNo}  Year Week No: {Date.DayOfYear / 7 + 1}";
         }
 
 

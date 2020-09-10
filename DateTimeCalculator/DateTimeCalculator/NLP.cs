@@ -48,6 +48,9 @@ namespace DateTimeCalculator {
             if (nlp.ContainsKey(s))
                 return nlp[s];
 
+            if (s.Contains("-"))
+                return "Do not have this NLP support !!!";
+
             // Complex NLPs e.g 3 months from, 2 years earlier etc
             string number = s.Substring(0, s.IndexOf(" "));
             string followup = s.Contains("day") ? "day" :

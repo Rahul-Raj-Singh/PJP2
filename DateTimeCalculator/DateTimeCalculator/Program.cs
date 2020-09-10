@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,9 @@ namespace DateTimeCalculator {
 
     class Program {
         static void Main(string[] args) {
+
+            // To track history in current session
+            var session = new List<string>();
 
             while (true) {
 
@@ -26,8 +30,10 @@ namespace DateTimeCalculator {
                     Console.WriteLine("  e.g. today, tomorrow, next-week, 3 days earlier etc");
 
                     string expression = Console.ReadLine().Trim();
+                    string ans = new NLP().Translate(expression);
+                    Console.WriteLine(ans);
 
-                    Console.WriteLine(new NLP().Translate(expression));
+                    session.Add($"NLP: {expression} => {ans}");
                     continue;
                 }
 
@@ -43,31 +49,52 @@ namespace DateTimeCalculator {
 
                 switch (option2) {
 
-                    case "1":
-                        Console.WriteLine(calculator.DetermineDayOfWeek());
-                        break;
+                    case "1": {
 
-                    case "2":
-                        Console.WriteLine(calculator.DetermineWeekNumber());
-                        break;
+                            string ans = calculator.DetermineDayOfWeek();
+                            Console.WriteLine(ans);
 
-                    case "3":
-                        Console.WriteLine("Enter data to Add");
-                        Console.WriteLine("   eg: 3 days, 4 months, 2 days 1 year etc");
+                            session.Add($"{date}: DayOfWeek => {ans}");
+                            break;
+                    }
 
-                        string input1 = Console.ReadLine().Trim();
+                    case "2": {
 
-                        Console.WriteLine(calculator.Add(input1));
-                        break;
+                            string ans = calculator.DetermineWeekNumber();
+                            Console.WriteLine(ans);
 
-                    case "4":
-                        Console.WriteLine("Enter data to Subtract");
-                        Console.WriteLine("   eg: 31/12/2018, 3 days, 4 months, 2 days 1 year etc");
+                            session.Add($"{date}: Week Number => {ans}");
+                            break;
+                    }
+                        
 
-                        string input2 = Console.ReadLine().Trim();
+                    case "3": {
 
-                        Console.WriteLine(calculator.Subtract(input2));
-                        break;
+                            Console.WriteLine("Enter data to Add");
+                            Console.WriteLine("   eg: 3 days, 4 months, 2 days 1 year etc");
+
+                            string input = Console.ReadLine().Trim();
+                            string ans = calculator.Add(input);
+                            Console.WriteLine(ans);
+
+                            session.Add($"{date}: Add {input} => {ans}");
+                            break;
+                        }
+
+
+                    case "4": {
+
+                            Console.WriteLine("Enter data to Subtract");
+                            Console.WriteLine("   eg: 31/12/2018, 3 days, 4 months, 2 days 1 year etc");
+
+                            string input = Console.ReadLine().Trim();
+                            string ans = calculator.Subtract(input);
+                            Console.WriteLine(ans);
+
+                            session.Add($"{date}: Subtract {input} => {ans}");
+                            break;
+                    }
+
 
                     default:
                         Console.WriteLine("Invalid Choice !!!");
@@ -79,6 +106,8 @@ namespace DateTimeCalculator {
             }
 
             Console.WriteLine("-----Session Closed-----");
+            SaveSession(session);
+            Console.WriteLine("-----Session Saved------");
 
         }
 
@@ -98,6 +127,19 @@ namespace DateTimeCalculator {
             Console.WriteLine("1. Enter Date");
             Console.WriteLine("2. Enter Natural Language");
             Console.WriteLine("**Press Q to Quit**");
+        }
+
+        // Persist history of current session in text file
+        private static void SaveSession(List<string> session) {
+
+            string location = Directory.GetCurrentDirectory().Replace(@"bin\Debug", "") + "history.txt";
+
+            using (StreamWriter sw = File.AppendText(location)) {
+
+                foreach(var line in session) 
+                    sw.WriteLine(line);
+                sw.WriteLine("----------");
+            }
         }
     }
 }
