@@ -1,0 +1,118 @@
+
+.container-custom{
+    width: 60vw;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+fieldset{
+    padding: 2rem;
+    background: #fff;
+    border: none;
+    box-shadow: 5px 5px 10px black;
+    border-radius: 10px;
+    
+}
+
+legend{
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 0 auto;
+    padding: 1rem;
+
+}
+
+
+.option{
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+label{
+    padding: 0.8em;
+}
+
+input{
+    padding: 0.8em;
+    font-size: 0.9em;
+    border: solid 1px #ddd;
+    background: #f9f9f9;
+    outline: none;
+    transition: background 0.25s;
+}
+
+.option input:focus{
+    background: white;
+}
+
+.buttons{
+    display: flex;
+}
+
+.buttons > *{
+    padding: 0.5rem;
+    width: 8rem;
+    color: white;
+    background: #14b64a;
+    border: solid 2px #0fa942;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    margin-right: 0.5em;
+}
+
+/*****/
+
+.style{
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: solid 1px #bbb;
+    position: relative;
+    
+}
+
+.style > input{
+    width: 19rem;
+    margin: 2rem 0;
+}
+
+.style input[type='submit']{
+    display: block;
+    padding: 0.5rem;
+    width: 8rem;
+    color: white;
+    background: #0275d8;
+    border: solid 2px #0275d1;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    margin-right: 0.5em;
+}
+
+.addDate, .subDate{
+    display: none;
+}
+
+.close{
+    color: red;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+
+/*****/
+
+#result{
+    display: block;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin-top: 1.5rem;
+    color: tomato;
+    visibility: visible;
+    outline: none;
+    resize: none;
+    
+}
+

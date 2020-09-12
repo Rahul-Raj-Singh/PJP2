@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "YiV54V3p2puFTgE8gPNs1c6JG8OF/abFTUYTmVRvlechJ/yx0OBaepuwXgnKp2rbKd2IU8zyxbWLuoQbCq1caQ==",
+  "success": true,
+  "projectFilePath": "F:\\Learnin C#\\CalculatorAPI\\CalculatorAPI\\CalculatorAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\pc\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\microsoft.openapi\\1.1.4\\microsoft.openapi.1.1.4.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\swashbuckle.aspnetcore\\5.5.1\\swashbuckle.aspnetcore.5.5.1.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.5.1\\swashbuckle.aspnetcore.swagger.5.5.1.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.5.1\\swashbuckle.aspnetcore.swaggergen.5.5.1.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.5.1\\swashbuckle.aspnetcore.swaggerui.5.5.1.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\system.net.http.json\\3.2.1\\system.net.http.json.3.2.1.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512"
+  ],
+  "logs": []
+}

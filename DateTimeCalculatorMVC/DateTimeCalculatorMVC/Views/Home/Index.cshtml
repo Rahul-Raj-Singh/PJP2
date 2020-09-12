@@ -1,0 +1,56 @@
+﻿@model FieldModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section styles{
+
+    <link href="~/css/style.css" rel="stylesheet" />
+
+}
+
+<div class="container">
+    <fieldset>
+        <legend>DateTime Calculator</legend>
+        <form class ="form" asp-action="Index">
+
+            <div asp-validation-summary="ModelOnly"></div>
+
+            <div class="option">
+                <label asp-for="FirstDate">Enter Date</label>
+                <input type="text" asp-for="FirstDate" id="first_date" placeholder="dd-mm-yyyy">
+                <span asp-validation-for="FirstDate" class="text-danger"></span>
+            </div>
+
+            <div class="addDate style">
+                <label asp-for="SecondAddDate">Enter to Add</label>
+                <input asp-for="SecondAddDate" type="text" id="second_add_date" placeholder="e.g, 3 days, 1 week, 2 months etc">
+                <input type="submit" name="submit" value="Add">
+                <span class="close">X</span>
+            </div>
+
+            <div class="subDate style">
+                <label asp-for="SecondSubDate">Enter to Subtract</label>
+                <input asp-for="SecondSubDate" type="text" id="second_sub_date" placeholder="e.g, 31-12-2005, 2 months, 3 days, 1 year">
+                <input type="submit" name="submit" value="Subtract">
+                <span class="close">X</span>
+            </div>
+
+            <div class="buttons">
+                <input type="submit" name="submit" id="week_day" value="Week Day">
+                <input type="submit" name="submit" id="week_no" value="Week No.">
+                <button id="add">Add</button>
+                <button id="sub">Subtract</button>
+            </div>
+
+            @if(Model != null) {
+
+                <textarea id="result" rows="5" cols="60" readonly class="form-control">@Model.Result</textarea>
+            }
+
+        </form>
+    </fieldset>
+</div>
+
+<script src="~/js/calculate.js"></script>
